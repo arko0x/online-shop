@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<title>Online shop</title>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div id="paneWithLogo">
+		<div id="logoBox">
+			<a th:href="@{/}">
+				<img src="ola.jpg" alt="Picture can't be displayed">
+			</a>
+		</div>	
+		<div id="userPane">
+			<a href="#">Dodaj ogłoszenie</a>
+		</div>
+	</div>
+
+	<div id="userInput">
+		<div id="userFormBox">
+			<p>Twoje ogłoszenie</p>
+
+			<form>
+				<input type="text" name="nazwa-oferty" placeholder="Nazwa oferty">
+				<br>
+				<input type="text" name="opis-oferty" placeholder="Opis oferty">
+				<br>
+				<input type="number" name="cena" placeholder="Cena">
+				<br>
+				<select name="kategoria" id="kategoria">
+					<option value="Motoryzacja">Motoryzacja</option>
+					<option value="Praca">Praca</option>
+				</select>
+				<br>
+				<input type="submit" value="Dodaj">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

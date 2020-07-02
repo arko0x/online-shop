@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 	<title>Online shop</title>
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 	<div id="paneWithLogo">
 		<div id="logoBox">
-			<a href="index.html">
+			<a href="index.html" th:href="@{/}">
 				<img src="ola.jpg">
 			</a>
 		</div>	
 		<div id="userPane">
-			<a href="offerAdd.html">Dodaj ogłoszenie</a>
+			<a th:href="@{/addOffer}">Dodaj ogłoszenie</a>
 		</div>
 	</div>
 </body>
