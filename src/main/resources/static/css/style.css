@@ -52,9 +52,41 @@ body {
   	width: 25%;
 }
 
+#myAccount {
+	float:left;
+	width: 20%;
+	height: 100%;
+	position: relative;
+}
+
+#myAccount > a:link, #myAccount > a:visited {
+	background: white;
+	color: #002f34;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Verdana;
+	border-radius: 10px;
+	border: 3px solid white;
+	right: 5px;
+	margin: 0;
+	padding: 8px;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#myAccount > a:hover {
+	background: #002f34;
+	color: white;
+	text-decoration: none;
+	transition: 0.2s
+}
+
 #userPane {
 	float: left;
-	width: 40%;
+	width: 20%;
 	height: 100%;
 	position: relative;
 }
@@ -113,4 +145,26 @@ input[type=submit] {
 input[type=submit]:hover {
 	border: 1px solid #002f34;
 	transition: 0.3s;
+}
+
+#profileInfo {
+	clear: both;
+	color: #002f34;
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+	border: 1px solid #002f34;
+	margin: auto;
+	width: 50%;
+	text-align: center;
+}
+
+#offers {
+	clear: both;
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	color: #002f34;
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+	border: 1px solid #002f34;
 }
