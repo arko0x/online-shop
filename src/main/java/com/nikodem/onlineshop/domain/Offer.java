@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
@@ -18,7 +19,17 @@ public class Offer {
 
     private String description;
 
+    private String where;
+
+    private String whyForSale;
+
+    private Boolean isForNegotation;
+
     private double price;
+
+    private Date placedAt;
+
+
 
     @ManyToOne
     private User user;

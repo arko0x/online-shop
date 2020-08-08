@@ -167,4 +167,5 @@ input[type=submit]:hover {
 	font-weight: bold;
 	font-family: 'Roboto', sans-serif;
 	border: 1px solid #002f34;
+	border-top: none;
 }

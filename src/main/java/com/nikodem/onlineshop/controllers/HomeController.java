@@ -25,6 +25,7 @@ public class HomeController {
         List<Offer> offers = (List<Offer>) offerRepository.findAll();
 
         model.addAttribute("offers", offers);
+        model.addAttribute("areThereAnyOffers", !offers.isEmpty());
 
         return "index";
     }

@@ -19,10 +19,12 @@
 		<div id="userPane">
 			<a th:href="@{/offer/add}">Dodaj ogłoszenie</a>
 		</div>
-		<div id="offers">
+		<div th:if="${areThereAnyOffers}" id="offers">
 			<div th:each="offer : ${offers}">
-				<p th:text="${offer.name}"></p>
-				<p th:text="${offer.description}"></p>
+				<div id="offer">
+					<p th:text="${offer.name}"></p>
+					<p style="font-weight: lighter;" th:text="${offer.description}"></p>
+				</div>
 			</div>
 		</div>
 	</div>
