@@ -1,6 +1,5 @@
 package com.nikodem.onlineshop.domain;
 
-import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,7 +18,7 @@ public class Offer {
 
     private String description;
 
-    private String where;
+    private String whereItIs;
 
     private String whyForSale;
 
@@ -28,8 +27,6 @@ public class Offer {
     private double price;
 
     private Date placedAt;
-
-
 
     @ManyToOne
     private User user;

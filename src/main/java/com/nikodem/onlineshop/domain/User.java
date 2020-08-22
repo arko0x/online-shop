@@ -1,25 +1,19 @@
 package com.nikodem.onlineshop.domain;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class User implements UserDetails {
+@NoArgsConstructor(access = AccessLevel.PRIVATE,force = true)
+public class User implements UserDetails{
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -30,10 +24,20 @@ public class User implements UserDetails {
 
     private String password;
 
+    private String city;
+    private String zip;
+    private String state;
+    private String street;
+    private String houseNumber;
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
+
+    @OneToMany(mappedBy = "user")
+    private List<Offer> offers;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
