@@ -22,7 +22,7 @@ public class Offer {
 
     private String whyForSale;
 
-    private Boolean isForNegotation;
+    private Boolean isForNegotiation;
 
     private double price;
 

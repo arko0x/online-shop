@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.nikodem.onlineshop.repositories.OfferRepository;
 
+import java.util.Date;
+
 @Controller
 @Slf4j
 @RequestMapping("/offer")
@@ -35,14 +37,13 @@ public class OfferController {
     public String offerAdd(Model model) {
         model.addAttribute("offer", new Offer());
 
-        log.info("IN GET MAPPING XD");
-
         return "offerAdd";
     }
 
     @PostMapping("/add")
     public String proceedOffer(@ModelAttribute Offer offer, @AuthenticationPrincipal User user, Model model) {
         offer.setUser(user);
+        offer.setPlacedAt(new Date());
         offerRepository.save(offer);
 
         return "redirect:/";
