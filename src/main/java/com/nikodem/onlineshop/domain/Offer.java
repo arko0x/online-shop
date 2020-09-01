@@ -16,6 +16,7 @@ public class Offer {
 
     private String name;
 
+    @Column(columnDefinition="TEXT")
     private String description;
 
     private String whereItIs;

@@ -32,8 +32,6 @@ public class UserAccountController {
 
         User currentUser = userRepository.findByUsername(username);
 
-        System.out.println(currentUser.toString());
-
         model.addAttribute("currentUser", currentUser);
 
         return "myAccount";
