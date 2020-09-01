@@ -22,10 +22,10 @@ public class HomeController {
 
     @GetMapping
     public String getHomePage(Model model) {
-//        List<Offer> offers = (List<Offer>) offerRepository.findAll();
-//
-//        model.addAttribute("offers", offers);
-//        model.addAttribute("areThereAnyOffers", !offers.isEmpty());
+        List<Offer> offers = (List<Offer>) offerRepository.findAll();
+
+        model.addAttribute("offers", offers);
+        model.addAttribute("areThereAnyOffers", !offers.isEmpty());
 
         return "index";
     }
