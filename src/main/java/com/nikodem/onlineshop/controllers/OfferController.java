@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import com.nikodem.onlineshop.repositories.OfferRepository;
 
+import javax.validation.Valid;
 import java.util.Date;
 
 @Controller
@@ -41,7 +43,11 @@ public class OfferController {
     }
 
     @PostMapping("/add")
-    public String proceedOffer(@ModelAttribute Offer offer, @AuthenticationPrincipal User user, Model model) {
+    public String proceedOffer(@ModelAttribute @Valid Offer offer, BindingResult bindingResult, @AuthenticationPrincipal User user, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "offerAdd";
+        }
+
         offer.setUser(user);
         offer.setPlacedAt(new Date());
         offerRepository.save(offer);
