@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-public class Offer {
+public class Offer implements Comparable<Offer>{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -41,4 +41,23 @@ public class Offer {
 
     @ManyToOne
     private User user;
+
+    @Override
+    public String toString() {
+        return "Offer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", whereItIs='" + whereItIs + '\'' +
+                ", whyForSale='" + whyForSale + '\'' +
+                ", isForNegotiation=" + isForNegotiation +
+                ", price=" + price +
+                ", placedAt=" + placedAt +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Offer o) {
+        return this.placedAt.compareTo(o.getPlacedAt());
+    }
 }

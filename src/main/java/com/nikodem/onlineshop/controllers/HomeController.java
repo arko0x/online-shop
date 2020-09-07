@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Controller
@@ -23,6 +24,7 @@ public class HomeController {
     @GetMapping
     public String getHomePage(Model model) {
         List<Offer> offers = (List<Offer>) offerRepository.findAll();
+        offers.sort(Comparator.reverseOrder());
 
         model.addAttribute("offers", offers);
         model.addAttribute("areThereAnyOffers", !offers.isEmpty());
