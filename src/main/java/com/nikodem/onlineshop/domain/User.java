@@ -6,10 +6,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -39,6 +36,7 @@ public class User implements UserDetails{
 
     @NotNull
     @NotBlank
+    @Pattern(regexp = "[0-9][0-9]-[0-9][0-9][0-9]")
     private String zip;
 
     @NotNull
@@ -58,7 +56,7 @@ public class User implements UserDetails{
         this.password = password;
     }
 
-    public User(@NotNull @NotBlank String username, @NotNull @NotBlank String password, @NotNull @NotBlank String city, @NotNull @NotBlank String zip, @NotNull @NotBlank String state, @NotNull @NotBlank String street, @NotNull @NotBlank String houseNumber) {
+    public User(@NotNull @NotBlank String username, @NotNull @NotBlank String password, @NotNull @NotBlank String city, @NotNull @NotBlank @Pattern(regexp = "[0-9][0-9]-[0-9][0-9][0-9]") String zip, @NotNull @NotBlank String state, @NotNull @NotBlank String street, @NotNull @NotBlank String houseNumber) {
         this.username = username;
         this.password = password;
         this.city = city;
