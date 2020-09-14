@@ -35,7 +35,7 @@ public class Offer implements Comparable<Offer>{
 
     private Boolean isForNegotiation;
 
-    private double price;
+    private int price;
 
     private Date placedAt;
 
