@@ -2,10 +2,13 @@
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title th:text="${offer}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>My offers</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -42,46 +45,34 @@
             </ul>
         </div>
     </nav>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a th:href="@{/}">Strona główna</a></li>
-            <li class="breadcrumb-item"><a th:href="@{/offer/list}">Oferty</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Obecna oferta</li>
-        </ol>
-    </nav>
 </header>
-<div class="container">
-<!--    <h1 th:text="${offer.name}"></h1>-->
-    <div class="jumbotron">
-        <h1 class="display-4" th:text="${offer.name}"></h1>
-        <hr class="my-4">
-        <h3 th:text="${offer.price} + ' zł'">It uses utility classes for typography and spacing to space content out within the larger container.</h3>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Skontaktuj się ze sprzedającym</a>
-        </p>
-    </div>
-    <div>
-        <h4>Opis</h4>
-        <p th:text="${offer.description}"></p>
-    </div>
-    <table class="table table-dark">
-        <tbody>
-        <tr>
-            <th scope="row">Miejscowość</th>
-            <td colspan="3" th:text="${offer.whereItIs}"></td>
-        </tr>
-        <tr>
-            <th scope="row">Data dodania</th>
-            <td colspan="3" th:text="${offer.placedAt}">Jacob</td>
-        </tr>
-        <tr>
-            <th scope="row">Powód sprzedaży</th>
-            <td colspan="3" th:text="${offer.whyForSale}"></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
 
+<div th:if="${areThereAnyOffers}" class="container border border-primary">
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <h2>Moje ogłoszenia</h2>
+            <table class="table table-hover">
+                <tbody>
+                <tr th:each="offer : ${userOffers}">
+                    <td class="col-sm-8 col-md-10">
+                        <div class="media">
+                            <a class="thumbnail pull-left" th:href="@{'/offer/' + ${offer.id}}"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a th:href="@{'/offer/' + ${offer.id}}" th:text="${offer.name}"></a></h4>
+                            </div>
+                        </div></td>
+                    <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <button class="btn btn-outline-dark">Edytuj</button>
+                    </td>
+                    <td class="col-sm-1 col-md-1">
+                        <button type="button" class="btn btn-danger">Usuń</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
