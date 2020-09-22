@@ -22,7 +22,7 @@ public class Offer implements Comparable<Offer>{
 
     @Column(columnDefinition="TEXT")
     @NotBlank
-    @Size(max = 400)
+    @Size(max = 1000)
     private String description;
 
     @NotBlank
