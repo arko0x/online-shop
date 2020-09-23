@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-    private OfferRepository offerRepository;
+    private final OfferRepository offerRepository;
 
     @Autowired
     public HomeController(OfferRepository offerRepository) {

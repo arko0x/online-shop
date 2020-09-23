@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -41,6 +42,10 @@ public class Offer implements Comparable<Offer>{
 
     @ManyToOne
     private User user;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "offer")
+    private List<OfferImage> images;
+
 
     @Override
     public String toString() {

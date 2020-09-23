@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 	<title>Online shop</title>
@@ -45,7 +46,7 @@
 </header>
 	<div class="container">
 		<h1>Dodaj ofertę: </h1>
-		<form method="post" th:action="@{/offer/add}" th:object="${offer}" autocomplete="on">
+		<form method="post" th:action="@{/offer/add}" th:object="${offer}" autocomplete="on" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="name">Nazwa oferty</label>
 				<input type="text" name="name" id="name" placeholder="Nazwa oferty" class="form-control" th:field="*{name}"/>
@@ -77,6 +78,10 @@
 			<div class="form-group">
 				<label for="price">Cena</label>
 				<input type="number" name="price" id="price" placeholder="Cena" class="form-control" th:field="*{price}"/>
+			</div>
+			<div class="form-group">
+				<label for="images">Zdjęcia</label>
+				<input type="file" name="images" id="images" class="form-control" multiple th:field="*{images}"/>
 			</div>
 			<div class="form-check">
 				<input type="checkbox" class="form-check-input" id="isForNegotiation" name="isForNegotiation" th:field="*{isForNegotiation}">

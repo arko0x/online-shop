@@ -37,7 +37,7 @@ public class RegisterController {
     }
 
     @PostMapping
-    public String register(@ModelAttribute @Valid RegisterForm registerForm, BindingResult bindingResult, Model model) {
+    public String register(@ModelAttribute @Valid RegisterForm registerForm, BindingResult bindingResult) {
         User user = registerForm.toUser(passwordEncoder);
 
         usernameValidator.validate(user, bindingResult);
