@@ -8,8 +8,8 @@ It's a project developed for practice purposes.
 - add offer
 - show added offers
 - show user offers
+- edit offer
+- delete offer
 
 # In progress
 - communication between users
-- edit offer
-- delete offer
