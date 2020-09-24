@@ -52,7 +52,8 @@
 		<div th:each="offer : ${offers}" class="card">
 			<div class="row no-gutters">
 				<div class="col-auto">
-					<img src="//placehold.it/200" class="img-fluid" alt="">
+					<img th:if="${not #lists.isEmpty(offer.images)}" th:src="@{'/uploads/' + ${offer.images[0].name}}" class="img-fluid" alt="">
+					<img th:if="${#lists.isEmpty(offer.images)}" src="//placehold.it/200" class="img-fluid" alt="">
 				</div>
 				<div class="col">
 					<div class="card-block px-2">
