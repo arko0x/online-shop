@@ -26,6 +26,10 @@ public class Offer implements Comparable<Offer>{
     @ManyToOne
     private Brand brand;
 
+    @NotNull
+    @NotBlank
+    private String carModel;
+
     @Column(columnDefinition="TEXT")
     @NotBlank
     @Size(max = 1000)
@@ -57,12 +61,15 @@ public class Offer implements Comparable<Offer>{
         return "Offer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", brand=" + brand +
+                ", carModel='" + carModel + '\'' +
                 ", description='" + description + '\'' +
                 ", whereItIs='" + whereItIs + '\'' +
                 ", whyForSale='" + whyForSale + '\'' +
                 ", isForNegotiation=" + isForNegotiation +
                 ", price=" + price +
                 ", placedAt=" + placedAt +
+                ", user=" + user +
                 '}';
     }
 

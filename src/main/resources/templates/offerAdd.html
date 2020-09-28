@@ -61,6 +61,13 @@
 				</select>
 			</div>
 			<div class="form-group">
+				<label for="carModel">Model</label>
+				<input type="text" name="carModel" id="carModel" placeholder="Miejscowość" class="form-control" th:field="*{carModel}"/>
+			</div>
+			<div th:if="${#fields.hasErrors('whereItIs')}" class="alert alert-danger" role="alert">
+				Oferta musi mieć miejscowość, której nazwa nie może przekraczać 30 znaków.
+			</div>
+			<div class="form-group">
 				<label for="description">Opis oferty</label>
 				<textarea rows="4" name="description" id="description" placeholder="Opis oferty" class="form-control" th:field="*{description}"></textarea>
 			</div>

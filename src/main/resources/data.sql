@@ -18,11 +18,11 @@ insert into user (username, password, city, zip, state, street, house_number, ph
 insert into brand (id, name) values (1, 'Audi');
 insert into brand (id, name) values (2, 'BMW');
 
-insert into offer (id, name, brand_id, description, where_it_is, why_for_sale, is_for_negotiation, price, placed_at, user_id) values (1,
-'Audi A4 B5', 1, 'Witam sprzedam Audi z automatem, bez elektroniki chodzi bez problemowo . Wyposażony w 2 poduszki powietrza, elektryczne szyby-przód, klimatyzacja ,radio ,wspomaganie kierownicy ,odpinany hak, central zamek z alarmem -multilok ,aluminiowe felgi, opony wielosezonowe kupione rok temu. Wszystkie wymiany olejów i klocki itd. robione na bieżąco . Auto po przeglądzie w lipcu. W aucie nie palono. Auto kupione z Berlina przyjechało na niemieckich numerach i w Polsce rejestrowane.',
+insert into offer (id, name, brand_id, car_model, description, where_it_is, why_for_sale, is_for_negotiation, price, placed_at, user_id) values (1,
+'Audi A4 B5', 1, 'A4 B5', 'Witam sprzedam Audi z automatem, bez elektroniki chodzi bez problemowo . Wyposażony w 2 poduszki powietrza, elektryczne szyby-przód, klimatyzacja ,radio ,wspomaganie kierownicy ,odpinany hak, central zamek z alarmem -multilok ,aluminiowe felgi, opony wielosezonowe kupione rok temu. Wszystkie wymiany olejów i klocki itd. robione na bieżąco . Auto po przeglądzie w lipcu. W aucie nie palono. Auto kupione z Berlina przyjechało na niemieckich numerach i w Polsce rejestrowane.',
 'Lubin', 'Znudziło mi się', true, 2000, NOW(), 2);
-insert into offer (id, name, brand_id, description, where_it_is, why_for_sale, is_for_negotiation, price, placed_at, user_id) values (2,
-'Opel Astra GTC 1.9CDTI', 1,  'Mam do zaoferowania sprowadzoną z NIEMIEC, jedyną w swoim rodzaju ASTRE H GTC w pakiecie OPC.
+insert into offer (id, name, brand_id, car_model, description, where_it_is, why_for_sale, is_for_negotiation, price, placed_at, user_id) values (2,
+'Opel Astra GTC 1.9CDTI', 1, 'Astra GTC', 'Mam do zaoferowania sprowadzoną z NIEMIEC, jedyną w swoim rodzaju ASTRE H GTC w pakiecie OPC.
 Ten egzemplarz jest wyposażony w bezawaryjny, bardzo dynamiczny a zaciszem ekonomicznym silnik 1.9 cdti 150 KM.',
 'Warszawa', 'Znudziło mi się', true, 13000, NOW(), 4);
 
