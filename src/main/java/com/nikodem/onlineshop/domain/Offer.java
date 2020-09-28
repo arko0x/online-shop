@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +21,10 @@ public class Offer implements Comparable<Offer>{
     @Size(max = 100)
     @NotBlank
     private String name;
+
+    @NotNull
+    @ManyToOne
+    private Brand brand;
 
     @Column(columnDefinition="TEXT")
     @NotBlank

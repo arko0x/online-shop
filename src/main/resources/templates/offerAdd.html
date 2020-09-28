@@ -55,6 +55,12 @@
 				Oferta musi mieć nazwę, która nie może przekraczać 100 znaków
 			</div>
 			<div class="form-group">
+				<label for="brand">Marka</label>
+				<select class="custom-select" id="brand" th:field="${offer.brand}">
+					<option th:each="brand : ${brands}" th:text="${brand.name}" th:value="${brand.name}"></option>
+				</select>
+			</div>
+			<div class="form-group">
 				<label for="description">Opis oferty</label>
 				<textarea rows="4" name="description" id="description" placeholder="Opis oferty" class="form-control" th:field="*{description}"></textarea>
 			</div>

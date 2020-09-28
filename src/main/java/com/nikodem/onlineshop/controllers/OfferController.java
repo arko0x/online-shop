@@ -1,8 +1,10 @@
 package com.nikodem.onlineshop.controllers;
 
+import com.nikodem.onlineshop.domain.Brand;
 import com.nikodem.onlineshop.domain.Offer;
 import com.nikodem.onlineshop.domain.OfferImage;
 import com.nikodem.onlineshop.domain.User;
+import com.nikodem.onlineshop.service.BrandService;
 import com.nikodem.onlineshop.service.ImageService;
 import com.nikodem.onlineshop.service.OfferService;
 import com.nikodem.onlineshop.service.UserService;
@@ -29,17 +31,19 @@ import java.util.*;
 @Controller
 @Slf4j
 @RequestMapping("/offer")
-@SessionAttributes("offer")
+@SessionAttributes({"offer", "brands"})
 public class OfferController {
     private final OfferService offerService;
     private final UserService userService;
     private final ImageService imageService;
+    private final BrandService brandService;
 
     @Autowired
-    public OfferController(OfferService offerService, UserService userService, ImageService imageService) {
+    public OfferController(OfferService offerService, UserService userService, ImageService imageService, BrandService brandService) {
         this.offerService = offerService;
         this.userService = userService;
         this.imageService = imageService;
+        this.brandService = brandService;
     }
 
     @GetMapping("/{id}")
@@ -55,6 +59,7 @@ public class OfferController {
     @GetMapping("/add")
     public String offerAdd(Model model) {
         model.addAttribute("offer", new Offer());
+        model.addAttribute("brands", brandService.getAllBrands());
 
         return "offerAdd";
     }
@@ -67,7 +72,6 @@ public class OfferController {
 
         offer.setUser(user);
         offer.setPlacedAt(new Date());
-     //   offer.setImages(offerImages);
         offer.getImages().forEach(image -> image.setOffer(offer));
         offerService.save(offer);
 
