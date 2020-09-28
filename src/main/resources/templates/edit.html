@@ -113,6 +113,14 @@
                     <div th:if="${#fields.hasErrors('houseNumber')}" class="invalid-feedback">Pole to nie może być puste.</div>
                 </td>
             </tr>
+            <tr>
+                <th scope="row">Numer telefonu</th>
+                <td th:text="${currentUser.phoneNumber}"></td>
+                <td>
+                    <input th:classappend="${#fields.hasErrors('phoneNumber') ? 'form-control is-invalid' : 'form-control'}" type="text" th:value="*{phoneNumber}" th:field="*{phoneNumber}">
+                    <div th:if="${#fields.hasErrors('phoneNumber')}" class="invalid-feedback">Pole to nie może być puste oraz musi zawierać 9 cyfr.</div>
+                </td>
+            </tr>
             </tbody>
         </table>
         <input type="submit" value="Zapisz zmiany" class="btn btn-primary" />

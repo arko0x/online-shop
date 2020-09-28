@@ -1,19 +1,19 @@
-insert into user (username, password, city, zip, state, street, house_number) values ('user', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'x', '11-111',
-'xxx', 'xxx', '1');
-insert into user (username, password, city, zip, state, street, house_number) values ('arken', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Lubin', '59-300',
-'dolnośląskie', 'Paderewskiego', '3/2');
-insert into user (username, password, city, zip, state, street, house_number) values ('deodeo', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Wrocław', '52-340',
-'dolnośląskie', 'Jana Pawła II', '92/3');
-insert into user (username, password, city, zip, state, street, house_number) values ('marek_77', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Warszawa', '50-222',
-'mazowieckie', 'Kolejowa', '7');
-insert into user (username, password, city, zip, state, street, house_number) values ('handlarz123', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Gdańsk', '22-222',
-'pomorskie', 'Kwiatowa', '17/5');
-insert into user (username, password, city, zip, state, street, house_number) values ('car_dealer', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Poznań', '33-333',
-'wielkopolskie', 'Pastelowa', '3');
-insert into user (username, password, city, zip, state, street, house_number) values ('KOMIS_LUBIN', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Lubin', '59-300',
-'dolnośląskie', 'Lipowa', '9');
-insert into user (username, password, city, zip, state, street, house_number) values ('Danuta95', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Zielona Góra', '88-888',
-'lubuskie', 'Fabryczna', '4');
+insert into user (username, password, city, zip, state, street, house_number, phone_number) values ('user', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'x', '11-111',
+'xxx', 'xxx', '1', '592123124');
+insert into user (username, password, city, zip, state, street, house_number, phone_number) values ('arken', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Lubin', '59-300',
+'dolnośląskie', 'Paderewskiego', '3/2', '123123123');
+insert into user (username, password, city, zip, state, street, house_number, phone_number) values ('deodeo', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Wrocław', '52-340',
+'dolnośląskie', 'Jana Pawła II', '92/3', '424264231');
+insert into user (username, password, city, zip, state, street, house_number, phone_number) values ('marek_77', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Warszawa', '50-222',
+'mazowieckie', 'Kolejowa', '7', '120425423');
+insert into user (username, password, city, zip, state, street, house_number, phone_number) values ('handlarz123', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Gdańsk', '22-222',
+'pomorskie', 'Kwiatowa', '17/5', '123009421');
+insert into user (username, password, city, zip, state, street, house_number, phone_number) values ('car_dealer', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Poznań', '33-333',
+'wielkopolskie', 'Pastelowa', '3', '924857312');
+insert into user (username, password, city, zip, state, street, house_number, phone_number) values ('KOMIS_LUBIN', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Lubin', '59-300',
+'dolnośląskie', 'Lipowa', '9', '917864364');
+insert into user (username, password, city, zip, state, street, house_number, phone_number) values ('Danuta95', '$2y$12$WBXIL31LyKA23QZAyVl60uNVpaH8HRcHPg4iUx4Ef7J88xzWql5ka', 'Zielona Góra', '88-888',
+'lubuskie', 'Fabryczna', '4', '948234123');
 
 insert into brand (id, name) values (1, 'Audi');
 insert into brand (id, name) values (2, 'BMW');

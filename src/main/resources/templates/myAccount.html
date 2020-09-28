@@ -99,6 +99,11 @@
             <td th:text="${currentUser.houseNumber}"></td>
             <td><a th:href="@{/myAccount/edit}" class="btn btn-outline-dark">Edytuj</button></td>
         </tr>
+        <tr>
+            <th scope="row">Numer telefonu</th>
+            <td th:text="${currentUser.phoneNumber}"></td>
+            <td><a th:href="@{/myAccount/edit}" class="btn btn-outline-dark">Edytuj</button></td>
+        </tr>
         </tbody>
     </table>
 </container>

@@ -98,6 +98,13 @@
         <div th:if="${#fields.hasErrors('houseNumber')}" class="alert alert-danger" role="alert">
             Musisz podać numer domu.
         </div>
+        <div class="form-group">
+            <label for="phoneNumber">Numer telefonu: </label>
+            <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Numer telefonu" th:field="*{phoneNumber}">
+        </div>
+        <div th:if="${#fields.hasErrors('phoneNumber')}" class="alert alert-danger" role="alert">
+            Musisz podać numer telefonu. Pole to musi zawierać 9 cyfr.
+        </div>
 
 
         <input type="submit" value="Zarejestruj się" class="btn btn-primary">

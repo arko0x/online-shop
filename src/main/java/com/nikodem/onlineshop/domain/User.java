@@ -51,12 +51,17 @@ public class User implements UserDetails{
     @NotBlank
     private String houseNumber;
 
+    @NotNull
+    @NotBlank
+    @Pattern(regexp="(^$|[0-9]{9})", message = "Numer musi mieć 9 cyfr")
+    private String phoneNumber;
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public User(@NotNull @NotBlank String username, @NotNull @NotBlank String password, @NotNull @NotBlank String city, @NotNull @NotBlank @Pattern(regexp = "[0-9][0-9]-[0-9][0-9][0-9]") String zip, @NotNull @NotBlank String state, @NotNull @NotBlank String street, @NotNull @NotBlank String houseNumber) {
+    public User(@NotNull @NotBlank String username, @NotNull @NotBlank String password, @NotNull @NotBlank String city, @NotNull @NotBlank @Pattern(regexp = "[0-9][0-9]-[0-9][0-9][0-9]") String zip, @NotNull @NotBlank String state, @NotNull @NotBlank String street, @NotNull @NotBlank String houseNumber, @NotNull @NotBlank @Pattern(regexp="(^$|[0-9]{9})", message = "Numer musi mieć 9 cyfr") String phoneNumber) {
         this.username = username;
         this.password = password;
         this.city = city;
@@ -64,6 +69,7 @@ public class User implements UserDetails{
         this.state = state;
         this.street = street;
         this.houseNumber = houseNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     @OneToMany(mappedBy = "user")
@@ -106,6 +112,7 @@ public class User implements UserDetails{
                 ", state='" + state + '\'' +
                 ", street='" + street + '\'' +
                 ", houseNumber='" + houseNumber + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 }

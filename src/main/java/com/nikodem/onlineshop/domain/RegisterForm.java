@@ -37,8 +37,13 @@ public class RegisterForm {
     @NotBlank
     private String houseNumber;
 
+    @NotNull
+    @NotBlank
+    @Pattern(regexp="(^$|[0-9]{9})", message = "Numer musi mieć 9 cyfr")
+    private String phoneNumber;
+
     public User toUser(PasswordEncoder passwordEncoder) {
-        return new User(username, passwordEncoder.encode(password), city, zip, state, street, houseNumber);
+        return new User(username, passwordEncoder.encode(password), city, zip, state, street, houseNumber, phoneNumber);
     }
 
 }

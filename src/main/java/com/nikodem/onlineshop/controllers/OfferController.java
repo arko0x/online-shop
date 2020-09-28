@@ -1,11 +1,8 @@
 package com.nikodem.onlineshop.controllers;
 
-import com.nikodem.onlineshop.domain.Brand;
 import com.nikodem.onlineshop.domain.Offer;
-import com.nikodem.onlineshop.domain.OfferImage;
 import com.nikodem.onlineshop.domain.User;
 import com.nikodem.onlineshop.service.BrandService;
-import com.nikodem.onlineshop.service.ImageService;
 import com.nikodem.onlineshop.service.OfferService;
 import com.nikodem.onlineshop.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,14 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import java.io.IOException;
 import java.nio.file.AccessDeniedException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
 @Controller
@@ -35,14 +27,12 @@ import java.util.*;
 public class OfferController {
     private final OfferService offerService;
     private final UserService userService;
-    private final ImageService imageService;
     private final BrandService brandService;
 
     @Autowired
-    public OfferController(OfferService offerService, UserService userService, ImageService imageService, BrandService brandService) {
+    public OfferController(OfferService offerService, UserService userService, BrandService brandService) {
         this.offerService = offerService;
         this.userService = userService;
-        this.imageService = imageService;
         this.brandService = brandService;
     }
 
