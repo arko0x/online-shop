@@ -27,7 +27,9 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" th:href="@{/offer/userOffers}">Moje ogłoszenia</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" th:href="@{/logout}">Wyloguj</a>
+                        <form class="dropdown-item" method="post" th:action="@{/logout}">
+                            <input type="submit" value="Wyloguj" class="btn btn-link"/>
+                        </form>
                     </div>
                 </li>
             </ul>
