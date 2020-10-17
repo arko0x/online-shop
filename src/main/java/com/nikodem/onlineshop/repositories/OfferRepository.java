@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface OfferRepository extends CrudRepository<Offer, Long> {
     List<Offer> findAllByUser(User user);
+    List<Offer> findAll();
 }
