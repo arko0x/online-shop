@@ -10,6 +10,3 @@ It's a project developed for practice purposes.
 - show user offers
 - edit offer
 - delete offer
-
-# In progress
-- communication between users
