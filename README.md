@@ -10,3 +10,7 @@ It's a project developed for practice purposes.
 - show user offers
 - edit offer
 - delete offer
+
+# Username and password for testing
+Username: user
+Password: user1234
