@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Offer implements Comparable<Offer>{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Size(max = 100)
